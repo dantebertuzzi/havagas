@@ -755,18 +755,3 @@ button:hover {
     text-align: center;
 }
 
-.share-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.IN-widget {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-}
-
-
