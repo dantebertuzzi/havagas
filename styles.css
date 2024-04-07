@@ -162,7 +162,7 @@ footer {
 }
 
 .job {
-    animation: none; /*moveLeft 2s ease-in-out infinite alternate;*/
+    animation: moveLeft 2s ease-in-out infinite alternate; /*moveLeft 2s ease-in-out infinite alternate;*/
 }
 
 .job:hover {
