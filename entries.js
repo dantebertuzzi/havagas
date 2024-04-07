@@ -18,8 +18,8 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior em pilotar aeronaves, de preferência BOEING, estágio de ensino ou tutoria em Física Nuclear, Conhecimento de métodos de ensino eficazes e técnicas de avaliação de Datação quantica.',
         phone: '+55870000000',
-        startDate: '2024-04-07T01:00:00-03:00',
-        endDate: '2024-04-15T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-09T00:20:00-03:00'
     },
     {
         id: 'job1',
