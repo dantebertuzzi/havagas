@@ -1,6 +1,16 @@
 // entries.js
 
 const entries = [
+        {
+        id: 'job31',
+        title: 'CRN - Conselho Regional de Nutricionistas - 11ª Região',
+        enterprise: 'Concurso Público',
+        location: 'Nordeste',
+        description: '7 vagas, salário de R$ 3.973,53, Superior.',
+        email: 'https://www.idib.org.br/Concurso.aspx?ID=286',
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-05-06T00:20:00-03:00'
+    },
     {
         id: 'job31',
         title: 'Repositor',
@@ -8,8 +18,8 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior em pilotar aeronaves, de preferência BOEING, estágio de ensino ou tutoria em Física Nuclear, Conhecimento de métodos de ensino eficazes e técnicas de avaliação de Datação quantica.',
         phone: '+55870000000',
-        startDate: '2024-04-05T21:30:00-03:00',
-        endDate: '2024-04-09T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-15T00:20:00-03:00'
     },
     {
         id: 'job1',
@@ -18,8 +28,8 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior como professor, estágio de ensino ou tutoria, Conhecimento de métodos de ensino eficazes e técnicas de avaliação.',
         phone: '+55870000000',
-        startDate: '2024-04-04T21:40:00-03:00',
-        endDate: '2024-04-05T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-09T00:20:00-03:00'
     },
     {
         id: 'job2',
@@ -28,8 +38,8 @@ const entries = [
         location: 'Juazeiro-BA',
         description: 'Capacidade de motivar, treinar e desenvolver equipes de vendas, Excelente capacidade de comunicação e habilidades interpessoais.',
         email: 'exemplo2@empresa.com',
-        startDate: '2024-04-04T21:40:00-03:00',
-        endDate: '2024-04-08T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-20T00:20:00-03:00'
     },
     {
         id: 'job3',
@@ -38,7 +48,7 @@ const entries = [
         location: 'Lagoa Grande-PE',
         description: 'Experiência em lidar com questões relacionadas aos funcionários, como avaliação de desempenho, desenvolvimento de carreira, gestão de conflitos e resolução de problemas.',
         email: 'exemplo3@empresa.com',
-        startDate: '2024-04-04T21:40:00-03:00',
+        startDate: '2024-04-07T09:00:00-03:00',
         endDate: '2024-04-20T00:20:00-03:00'
     },
     {
@@ -48,8 +58,8 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Compreensão sólida dos princípios de engenharia estrutural, sistemas mecânicos, elétricos e hidráulicos. Conhecimento das regulamentações de construção e códigos de construção locais e nacionais.',
         phone: '+558711111111',
-        startDate: '2024-04-04T21:40:00-03:00',
-        endDate: '2024-04-20T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-19T00:20:00-03:00'
     },
     {
         id: 'job5',
@@ -58,8 +68,8 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'JavaScript, Python, Desenvolvimento Web.',
         email: 'exemplo8@empresa.com',
-        startDate: '2024-04-02T23:05:00-03:00',
-        endDate: '2024-04-05T00:20:00-03:00'
+        startDate: '2024-04-07T09:00:00-03:00',
+        endDate: '2024-04-10T00:20:00-03:00'
     },
     {
         id: 'job6',
@@ -69,7 +79,7 @@ const entries = [
         description: 'Adobe Photoshop, Ilustração, Design de Interface.',
         phone: '+55871111111',
         startDate: '2024-04-02T23:05:00-03:00',
-        endDate: '2024-04-05T00:20:00-03:00'
+        endDate: '2024-04-12T00:20:00-03:00'
     },
     {
         id: 'job7',
@@ -79,7 +89,7 @@ const entries = [
         description: 'Assistência ao Paciente, Administração de Medicamentos, Emergências Médicas.',
         email: 'exemplo35@empresa.com',
         startDate: '2024-04-02T23:05:00-03:00',
-        endDate: '2024-04-20T00:20:00-03:00'
+        endDate: '2024-04-11T00:20:00-03:00'
     },
     {
         id: 'job8',
