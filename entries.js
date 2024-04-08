@@ -8,7 +8,7 @@ const entries = [
         location: 'Nordeste',
         description: '7 vagas, salário de R$ 3.973,53, Superior.',
         email: 'https://www.idib.org.br/Concurso.aspx?ID=286',
-        startDate: '2024-04-07T21:50:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-05-06T00:20:00-03:00'
     },
     {
@@ -18,7 +18,7 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior em pilotar aeronaves, de preferência BOEING, estágio de ensino ou tutoria em Física Nuclear, Conhecimento de métodos de ensino eficazes e técnicas de avaliação de Datação quantica.',
         phone: '+55870000000',
-        startDate: '2024-04-07T21:50:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-09T00:20:00-03:00'
     },
     {
@@ -26,9 +26,9 @@ const entries = [
         title: 'Professor',
         enterprise: 'Colégio Madre Tereza de Calcutá',
         location: 'Petrolina-PE',
-        description: 'Experiência anterior como professor, estágio de ensino ou tutoria, Conhecimento de métodos de ensino eficazes e técnicas de avaliação.',
+        description: 'Experiência, Conhecimento de métodos de ensino eficazes e técnicas de avaliação.',
         phone: '+55870000000',
-        startDate: '2024-04-07T21:50:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-09T00:20:00-03:00'
     },
     {
@@ -36,9 +36,9 @@ const entries = [
         title: 'Gerente Comercial',
         enterprise: 'ZXC Magazine',
         location: 'Juazeiro-BA',
-        description: 'Capacidade de motivar, treinar e desenvolver equipes de vendas, Excelente capacidade de comunicação e habilidades interpessoais.',
+        description: 'Capacidade de motivar, Excelente capacidade de comunicação e habilidades interpessoais.',
         email: 'exemplo2@empresa.com',
-        startDate: '2024-04-07T21:50:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-20T00:20:00-03:00'
     },
     {
@@ -46,9 +46,9 @@ const entries = [
         title: 'Analista de RH',
         enterprise: 'Construc Engenharia',
         location: 'Lagoa Grande-PE',
-        description: 'Experiência em lidar com questões relacionadas aos funcionários, como avaliação de desempenho, desenvolvimento de carreira, gestão de conflitos e resolução de problemas.',
+        description: 'Experiência em lidar com avaliação de desempenho, gestão de conflitos e resolução de problemas.',
         email: 'exemplo3@empresa.com',
-        startDate: '2024-04-07T21:50:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-20T00:20:00-03:00'
     },
     {
@@ -56,9 +56,9 @@ const entries = [
         title: 'Arquiteto',
         enterprise: 'Urban Arquitetura e Projetos',
         location: 'Petrolina-PE',
-        description: 'Compreensão sólida dos princípios de engenharia estrutural, sistemas mecânicos, elétricos e hidráulicos. Conhecimento das regulamentações de construção e códigos de construção locais e nacionais.',
+        description: 'Compreensão sólida dos princípios de engenharia estrutural, sistemas mecânicos, elétricos e hidráulicos.',
         phone: '+558711111111',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-19T00:20:00-03:00'
     },
     {
