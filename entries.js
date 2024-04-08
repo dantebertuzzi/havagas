@@ -16,7 +16,7 @@ const entries = [
         title: 'Repositor',
         enterprise: 'Mercadinho do Seu Zé',
         location: 'Petrolina-PE',
-        description: 'Experiência anterior em pilotar aeronaves, de preferência BOEING, estágio de ensino ou tutoria em Física Nuclear, Conhecimento de métodos de ensino eficazes e técnicas de avaliação de Datação quantica.',
+        description: 'Experiência em pilotar aeronaves, Física Nuclear, técnicas de avaliação de Datação quantica.',
         phone: '+55870000000',
         startDate: '2024-04-08T08:00:00-03:00',
         endDate: '2024-04-09T00:20:00-03:00'
