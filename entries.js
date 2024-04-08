@@ -323,13 +323,12 @@ const entries = [
     }       
 ];
 
+const jobCache = {};
+
 function disableInput(input) {
     if (input) {
         input.disabled = true;
         input.style.userSelect = 'none';
-        input.style.webkitUserSelect = 'none';
-        input.style.MozUserSelect = 'none';
-        input.style.msUserSelect = 'none';
         input.style.pointerEvents = 'none';
     }
 }
@@ -345,28 +344,40 @@ function preventCopy(input) {
 }
 
 function updateTimer(jobId, startDate, endDate) {
-    const job = document.getElementById(jobId);
-    const timerDiv = job.querySelector('.timer');
-    const expiredMessage = job.querySelector('.expired-message');
-    const emailInput = job.querySelector('.email input');
-    const phoneInput = job.querySelector('.phone input');
+    if (!jobCache[jobId]) {
+        const job = document.getElementById(jobId);
+        const timerDiv = job.querySelector('.timer');
+        const expiredMessage = job.querySelector('.expired-message');
+        const emailInput = job.querySelector('.email input');
+        const phoneInput = job.querySelector('.phone input');
 
+        jobCache[jobId] = {
+            job,
+            timerDiv,
+            expiredMessage,
+            emailInput,
+            phoneInput,
+            start: new Date(startDate),
+            end: new Date(endDate),
+            interval: null
+        };
+
+        preventCopy(emailInput);
+        preventCopy(phoneInput);
+    }
+
+    const { job, timerDiv, expiredMessage, emailInput, phoneInput, start, end, interval } = jobCache[jobId];
     const now = new Date();
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-
     const remainingTime = end - now;
 
     if (remainingTime <= 0) {
-        clearInterval(job.timerInterval);
+        clearInterval(interval);
         job.classList.add('expired');
         expiredMessage.style.display = 'block';
         timerDiv.style.display = 'none';
 
         disableInput(emailInput);
-        preventCopy(emailInput);
         disableInput(phoneInput);
-        preventCopy(phoneInput);
 
         const phoneDiv = job.querySelector('.phone');
         if (phoneDiv) {
@@ -397,13 +408,14 @@ function updateTimer(jobId, startDate, endDate) {
         }
     }
 
-    job.timerInterval = setInterval(function() {
-        updateTimer(jobId, startDate, endDate);
-    }, 1000);
+    if (!interval) {
+        jobCache[jobId].interval = setInterval(() => updateTimer(jobId, startDate, endDate), 1000);
+    }
 }
 
-function generateJobListingsWithPhoneAndEmail() {
-    const jobListingsContainer = document.querySelector('.job-listings');
+const jobListingsContainer = document.querySelector('.job-listings');
+
+function generateJobListingsWithPhoneAndEmail(entries) {
     entries.forEach(entry => {
         const jobListing = document.createElement('div');
         jobListing.classList.add('job');
@@ -471,4 +483,6 @@ function openWhatsApp(phoneNumber) {
     window.open('https://wa.me/' + phoneNumber, '_blank');
 }
 
-document.addEventListener('DOMContentLoaded', generateJobListingsWithPhoneAndEmail);
+document.addEventListener('DOMContentLoaded', () => {
+    generateJobListingsWithPhoneAndEmail(entries);
+});
