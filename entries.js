@@ -8,7 +8,7 @@ const entries = [
         location: 'Nordeste',
         description: '7 vagas, salário de R$ 3.973,53, Superior.',
         email: 'https://www.idib.org.br/Concurso.aspx?ID=286',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-07T21:50:00-03:00',
         endDate: '2024-05-06T00:20:00-03:00'
     },
     {
@@ -18,7 +18,7 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior em pilotar aeronaves, de preferência BOEING, estágio de ensino ou tutoria em Física Nuclear, Conhecimento de métodos de ensino eficazes e técnicas de avaliação de Datação quantica.',
         phone: '+55870000000',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-07T21:50:00-03:00',
         endDate: '2024-04-09T00:20:00-03:00'
     },
     {
@@ -28,7 +28,7 @@ const entries = [
         location: 'Petrolina-PE',
         description: 'Experiência anterior como professor, estágio de ensino ou tutoria, Conhecimento de métodos de ensino eficazes e técnicas de avaliação.',
         phone: '+55870000000',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-07T21:50:00-03:00',
         endDate: '2024-04-09T00:20:00-03:00'
     },
     {
@@ -38,7 +38,7 @@ const entries = [
         location: 'Juazeiro-BA',
         description: 'Capacidade de motivar, treinar e desenvolver equipes de vendas, Excelente capacidade de comunicação e habilidades interpessoais.',
         email: 'exemplo2@empresa.com',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-07T21:50:00-03:00',
         endDate: '2024-04-20T00:20:00-03:00'
     },
     {
@@ -48,7 +48,7 @@ const entries = [
         location: 'Lagoa Grande-PE',
         description: 'Experiência em lidar com questões relacionadas aos funcionários, como avaliação de desempenho, desenvolvimento de carreira, gestão de conflitos e resolução de problemas.',
         email: 'exemplo3@empresa.com',
-        startDate: '2024-04-07T09:00:00-03:00',
+        startDate: '2024-04-07T21:50:00-03:00',
         endDate: '2024-04-20T00:20:00-03:00'
     },
     {
