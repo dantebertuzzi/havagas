@@ -350,6 +350,11 @@ nav a:hover {
     font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
 }
 
+[data-contact-label] .contact-icon {
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+
 /* Remover nome "Vagas em Destaque" */
 .job-listings h2 {
     display: none;
