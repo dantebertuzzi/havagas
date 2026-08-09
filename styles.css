@@ -252,6 +252,8 @@ nav a:hover {
     /* Deixando a borda arredondada */
     transition: transform 0.3s ease, background-color 0.3s ease;
     /* transform em vez de padding: não afeta a altura da linha da grid, então só o card sob o cursor cresce */
+    position: relative;
+    /* Contexto para o .phone/.email flutuarem sem crescer a altura do card (e da linha da grid) */
 }
 
 .job:hover {
@@ -259,9 +261,24 @@ nav a:hover {
     /* Cor mais escura ao passar o mouse */
     transform: scale(1.08);
     /* Cresce só este card, sem esticar a linha inteira da grid */
-    position: relative;
     z-index: 2;
     /* Fica por cima dos vizinhos enquanto cresce */
+}
+
+.job .phone,
+.job .email {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 100%;
+    margin-top: 8px;
+    z-index: 3;
+    background-color: inherit;
+    border: 1px solid #747373;
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
+    /* Posição absoluta: revelar telefone/email não aumenta a altura do card nem da linha da grid */
 }
 
 .job h3 {
@@ -292,7 +309,6 @@ nav a:hover {
     background: #6e3333;
     /* Cor mais escura ao passar o mouse */
     transform: scale(1.08);
-    position: relative;
     z-index: 2;
 }
 
