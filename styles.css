@@ -269,15 +269,18 @@ nav a:hover {
     /* Adicionando uma borda cinza claro */
     border-radius: 6px;
     /* Deixando a borda arredondada */
-    transition: padding 0.3s ease;
-    /* Adicionando transição para o padding */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* transform em vez de padding: não afeta a altura da linha da grid, então só o card sob o cursor cresce */
 }
 
 .job:hover {
     background: #344153;
     /* Cor mais escura ao passar o mouse */
-    padding: 30px;
-    /* Aumentando o padding ao passar o mouse */
+    transform: scale(1.08);
+    /* Cresce só este card, sem esticar a linha inteira da grid */
+    position: relative;
+    z-index: 2;
+    /* Fica por cima dos vizinhos enquanto cresce */
 }
 
 .job h3 {
@@ -307,8 +310,9 @@ nav a:hover {
 .expired:hover {
     background: #6e3333;
     /* Cor mais escura ao passar o mouse */
-    padding: 30px;
-    /* Aumentando o padding ao passar o mouse */
+    transform: scale(1.08);
+    position: relative;
+    z-index: 2;
 }
 
 /* ... (existing styles) ... */
