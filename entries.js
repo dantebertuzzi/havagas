@@ -75,11 +75,6 @@ function updateTimer(jobId, startDate, endDate) {
         disableInput(emailInput);
         disableInput(phoneInput);
 
-        const phoneDiv = job.querySelector('.phone');
-        if (phoneDiv) {
-            phoneDiv.style.display = 'none';
-        }
-
         const inputs = [emailInput, phoneInput];
         inputs.forEach(input => {
             if (input) {
