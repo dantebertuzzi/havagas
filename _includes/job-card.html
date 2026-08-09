@@ -1,0 +1,17 @@
+<div class="job" id="{{ include.job.job_id }}" data-location="{{ include.job.location }}">
+    <div class="job-top">
+        <h3><a href="{{ include.job.url | relative_url }}">{{ include.job.title }}</a></h3>
+        <span class="job-badge" data-badge></span>
+    </div>
+    <p class="job-meta">
+        <span class="material-symbols-outlined">business</span>{{ include.job.enterprise }}
+        <span class="material-symbols-outlined">location_on</span>{{ include.job.location }}
+    </p>
+    <p class="job-desc">{% if include.truncate %}{{ include.job.description | truncatewords: 20 }}{% else %}{{ include.job.description }}{% endif %}</p>
+    <a href="javascript:void(0)" class="button" data-contact-btn>
+        <span data-contact-label>Ver contato</span>
+    </a>
+    <div class="tooltip" style="display: none;">Email copiado!</div>
+    <div class="timer" data-data-inicio="{{ include.job.startDate }}" data-data-fim="{{ include.job.endDate }}"></div>
+    <div class="expired-message" style="display: none;">Anúncio Expirado</div>
+</div>

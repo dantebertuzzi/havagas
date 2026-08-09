@@ -118,22 +118,23 @@ footer {
 
 .button {
     width: 150px;
-    background-image: linear-gradient(115deg, #4fcf70, #44ce7b, #12bcfe, #a767e5, #fad648);
+    background: transparent;
+    border: 1px solid #4fcf70;
     text-align: center;
     margin: 10px auto;
     position: relative;
-    color: #fff;
+    color: #4fcf70;
     text-decoration: none;
     display: block;
     font-weight: normal;
     border-radius: 6px;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-    animation: play 1.6s ease-in infinite;
-    transform: scale(1.1);
+    background-color: #4fcf70;
+    color: #1c1c1c;
 }
 
 .button span {
@@ -141,39 +142,6 @@ footer {
     font-size: 16px;
     display: block;
     margin: 2px;
-    background: #27313f;
-    border-radius: 3px;
-}
-
-.job:hover .button,
-.announce-button:hover {
-    background-image: linear-gradient(115deg, #4fcf70, #44ce7b, #12bcfe, #a767e5, #fad648);
-}
-
-@keyframes play {
-    0% {
-        background-position: 0px;
-    }
-
-    20% {
-        background-position: -110px;
-    }
-
-    35% {
-        background-position: -180px;
-    }
-
-    50% {
-        background-position: -210px;
-    }
-
-    80% {
-        background-position: -350px;
-    }
-
-    100% {
-        background-position: -390px;
-    }
 }
 
 /* Estilos aqui, copie o CSS fornecido anteriormente */
@@ -306,6 +274,82 @@ nav a:hover {
     margin: 10px 0;
 }
 
+.job-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    text-align: left;
+}
+
+.job-top h3 {
+    text-align: left;
+}
+
+.job-badge {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #444;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.job-badge:empty {
+    display: none;
+}
+
+.job-badge--new {
+    background: #4fcf70;
+    color: #0d1f14;
+}
+
+.job-badge--closing-soon {
+    background: #fad648;
+    color: #1c1c1c;
+}
+
+.job-badge--expired {
+    background: #a24949;
+    color: #fff;
+}
+
+.job-meta {
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    color: #cfcfcf;
+}
+
+.job-meta .material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 4px;
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.job-desc {
+    text-align: left;
+    font-size: 14px;
+    color: #e6e6e6;
+}
+
+.timer {
+    font-size: 12px;
+    color: #9fa6ad;
+}
+
+[data-contact-label] .material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 4px;
+    vertical-align: text-bottom;
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
 /* Remover nome "Vagas em Destaque" */
 .job-listings h2 {
     display: none;
@@ -400,6 +444,37 @@ nav a:hover {
     /* Definindo a fonte do ícone */
     font-size: 20px;
     margin-right: 50px;
+}
+
+.city-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px auto 0;
+}
+
+.city-chip {
+    width: auto;
+    background: transparent;
+    border: 1px solid #4fcf70;
+    color: #4fcf70;
+    padding: 6px 14px;
+    margin: 0;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.city-chip:hover {
+    background: rgba(79, 207, 112, 0.15);
+}
+
+.city-chip.active {
+    background: #4fcf70;
+    color: #1c1c1c;
+    font-weight: bold;
 }
 
 .material-symbols-outlined {

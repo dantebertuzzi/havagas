@@ -7,19 +7,11 @@ layout: default
         <p>Explore vagas e oportunidades de carreira em <strong>Petrolina</strong>, <strong>Juazeiro</strong> e <strong>Região</strong>!</p>
     </section>
 {% include job-form-modal.html %}
+{% include city-filter.html %}
     <section class="job-listings">
-{% assign sorted_vagas = site.vagas | sort: "order" %}{% for job in sorted_vagas %}    <div class="job" id="{{ job.job_id }}">
-        <h3 style="margin-bottom: 0.5em;"><a href="{{ job.url | relative_url }}">{{ job.title }}</a></h3>
-        <h5 style="margin-bottom: 0.5em;">{{ job.enterprise }}</h5>
-        <p style="margin-bottom: 0.5em;">{{ job.location }}</p>
-        <p style="margin-bottom: 0.5em;">{{ job.description }}</p>
-        <a href="javascript:void(0)" class="button"><span>Candidatar-se</span></a>
-        <div class="tooltip" style="display: none;">Email copiado!</div>
-        <div class="timer" data-data-inicio="{{ job.startDate }}" data-data-fim="{{ job.endDate }}"></div>
-        <div class="expired-message" style="display: none;">Anúncio Expirado</div>
-    </div>
+{% assign sorted_vagas = site.vagas | sort: "order" %}{% for job in sorted_vagas %}{% include job-card.html job=job truncate=true %}
 {% endfor %}    </section>
-    <button id="loadMoreBtn" class="button" style="width: 150px; background-image: linear-gradient(115deg, #4fcf70, #44ce7b, #12bcfe, #a767e5, #fad648); text-align: center; margin: 20px auto; position: relative; color: #fff; text-decoration: none; display: block; font-weight: normal; border-radius: 6px; overflow: hidden; transition: transform 0.3s ease-in-out, background-color 0.3s ease; cursor: pointer; border: none;     padding: 1px 0; resize: none;">
+    <button id="loadMoreBtn" class="button" style="width: 150px; margin: 20px auto; display: block;">
         <span><strong>Mais Vagas</strong></span>
     </button>
 {% include footer.html %}

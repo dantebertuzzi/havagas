@@ -44,6 +44,7 @@ function updateTimer(jobId, startDate, endDate) {
         const job = document.getElementById(jobId);
         const timerDiv = job.querySelector('.timer');
         const expiredMessage = job.querySelector('.expired-message');
+        const badgeEl = job.querySelector('[data-badge]');
         const emailInput = job.querySelector('.email input');
         const phoneInput = job.querySelector('.phone input');
 
@@ -51,6 +52,7 @@ function updateTimer(jobId, startDate, endDate) {
             job,
             timerDiv,
             expiredMessage,
+            badgeEl,
             emailInput,
             phoneInput,
             start: new Date(startDate),
@@ -62,15 +64,22 @@ function updateTimer(jobId, startDate, endDate) {
         preventCopy(phoneInput);
     }
 
-    const { job, timerDiv, expiredMessage, emailInput, phoneInput, start, end, interval } = jobCache[jobId];
+    const { job, timerDiv, expiredMessage, badgeEl, emailInput, phoneInput, start, end, interval } = jobCache[jobId];
     const now = new Date();
     const remainingTime = end - now;
+    const closingSoonThreshold = 3 * 24 * 60 * 60 * 1000;
+    const newThreshold = 12 * 60 * 60 * 1000;
 
     if (remainingTime <= 0) {
         clearInterval(interval);
         job.classList.add('expired');
-        expiredMessage.style.display = 'block';
+        job.classList.remove('new');
         timerDiv.style.display = 'none';
+
+        if (badgeEl) {
+            badgeEl.textContent = 'Encerrada';
+            badgeEl.className = 'job-badge job-badge--expired';
+        }
 
         disableInput(emailInput);
         disableInput(phoneInput);
@@ -92,10 +101,20 @@ function updateTimer(jobId, startDate, endDate) {
         timerDiv.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         const timeSinceStart = now - start;
-        if (timeSinceStart <= 12 * 60 * 60 * 1000) {
-            job.classList.add('new');
-        } else {
-            job.classList.remove('new');
+        const isNew = timeSinceStart <= newThreshold;
+        job.classList.toggle('new', isNew);
+
+        if (badgeEl) {
+            if (remainingTime <= closingSoonThreshold) {
+                badgeEl.textContent = `Encerra em ${days}d`;
+                badgeEl.className = 'job-badge job-badge--closing-soon';
+            } else if (isNew) {
+                badgeEl.textContent = 'Nova';
+                badgeEl.className = 'job-badge job-badge--new';
+            } else {
+                badgeEl.textContent = '';
+                badgeEl.className = 'job-badge';
+            }
         }
     }
 
@@ -114,6 +133,15 @@ function initJobListings(entries) {
         }
         if (entry.email) {
             jobListing.insertAdjacentHTML('beforeend', `<div class="email" style="display: none;"><input type="text" id="emailInput" value="${entry.email}" readonly></div>`);
+        }
+
+        const contactLabel = jobListing.querySelector('[data-contact-label]');
+        if (contactLabel) {
+            if (entry.phone) {
+                contactLabel.innerHTML = '<span class="material-symbols-outlined">call</span> Ver telefone';
+            } else if (entry.email) {
+                contactLabel.innerHTML = '<span class="material-symbols-outlined">mail</span> Ver email';
+            }
         }
 
         const button = jobListing.querySelector('.button');

@@ -26,16 +26,7 @@
         <p><a href="/" style="color: #fad648;">&larr; Ver todas as vagas</a></p>
     </section>
     <section class="job-listings job-listings--single">
-    <div class="job" id="{{ page.job_id }}">
-        <h3 style="margin-bottom: 0.5em;">{{ page.title }}</h3>
-        <h5 style="margin-bottom: 0.5em;">{{ page.enterprise }}</h5>
-        <p style="margin-bottom: 0.5em;">{{ page.location }}</p>
-        <p style="margin-bottom: 0.5em;">{{ page.description }}</p>
-        <a href="javascript:void(0)" class="button"><span>Candidatar-se</span></a>
-        <div class="tooltip" style="display: none;">Email copiado!</div>
-        <div class="timer" data-data-inicio="{{ page.startDate }}" data-data-fim="{{ page.endDate }}"></div>
-        <div class="expired-message" style="display: none;">Anúncio Expirado</div>
-    </div>
+{% include job-card.html job=page %}
     </section>
 {% include footer.html %}
 {% include cookie-banner.html %}
