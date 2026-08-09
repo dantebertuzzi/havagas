@@ -240,6 +240,12 @@ nav a:hover {
     }
 }
 
+/* Página de uma vaga só: um card centralizado em vez de preso na 1ª coluna da grid */
+.job-listings--single {
+    grid-template-columns: minmax(280px, 500px);
+    justify-content: center;
+}
+
 .job {
     /*border: 1px solid #4fcf70;*/
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -268,8 +274,10 @@ nav a:hover {
 .job .phone,
 .job .email {
     position: absolute;
-    left: 10px;
-    right: 10px;
+    left: -1px;
+    right: -1px;
+    /* -1px cancela a borda do .job: alinha exatamente com a borda do card,
+       em vez de ficar recuado pelo padding e deixar a aresta do card de baixo à mostra */
     top: 100%;
     margin-top: 8px;
     z-index: 3;
@@ -283,6 +291,15 @@ nav a:hover {
 
 .job h3 {
     margin-top: 0;
+}
+
+.job h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.job h3 a:hover {
+    text-decoration: underline;
 }
 
 .job p {
@@ -623,21 +640,21 @@ button:hover {
 }
 
 #emailInput {
-    width: 200px; /* Você pode ajustar o tamanho conforme necessário */
-    padding: 8px;
-    border: 1px solid #ccc; /* Cor da borda */
-    border-radius: 5px; /* Borda arredondada */
-    background-image: url('https://img.icons8.com/material-rounded/24/000000/copy.png'); /* Define a imagem de fundo */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    background-position: calc(100% - 10px) center; /* Define a posição da imagem no input */
-    background-size: 20px; /* Define o tamanho da imagem */
-    background-color: #ffffff;
-    color: #000000;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px solid #4fcf70;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
 }
 
 #emailInput:focus {
     outline: none;
-    border-color: #007bff; /* Cor da borda quando o input está em foco */
+    border-color: #4fcf70;
 }
 
 #emailContainer a {
@@ -684,21 +701,21 @@ button:hover {
 }
 
 #phoneInput {
-    width: 200px; /* Você pode ajustar o tamanho conforme necessário */
-    padding: 8px;
-    border: 1px solid #ccc; /* Cor da borda */
-    border-radius: 5px; /* Borda arredondada */
-    background-image: url('https://img.icons8.com/ios-glyphs/30/whatsapp.png'); /* Define a imagem de fundo */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    background-position: calc(100% - 10px) center; /* Define a posição da imagem no input */
-    background-size: 20px; /* Define o tamanho da imagem */
-    background-color: #ffffff;
-    color: #000000;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px solid #4fcf70;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
 }
 
 #phoneInput:focus {
     outline: none;
-    border-color: #007bff; /* Cor da borda quando o input está em foco */
+    border-color: #4fcf70;
 }
 
 #phoneContainer a {
