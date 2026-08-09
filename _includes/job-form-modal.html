@@ -1,0 +1,47 @@
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Preencha o formulário abaixo</h2>
+            <form id="myForm" action="https://formsubmit.co/havagas.contato@gmail.com" method="POST" >
+                <label for="name">Empresa/ Organização/ Corporação:</label>
+                <input type="text" id="name" name="name" placeholder="Empresa XYZ" required><br><br>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Petrolina-PE" required><br><br>
+
+                <label for="profissao">Profissão (Cargo):</label>
+                <input type="text" id="profissao" name="profissao" placeholder="Analista Financeiro" required><br><br>
+
+                <label for="atribuicoes">Atribuições (Cargo):</label>
+                <input type="text" id="atribuicoes" name="atribuicoes" placeholder="Conferir DRE, preparar relatórios, ministrar reuniões" required><br><br>
+
+                <label for="pr">Pré-requisitos:</label>
+                <input type="text" id="pr" name="pr" placeholder="Conhecimento em Microsoft Excel, Power BI, Adobe Photoshop, Corel Draw" required><br><br>
+
+                <label for="ch">Carga horária:</label>
+                <input type="text" id="ch" name="ch" placeholder="40 horas semanais" required><br><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required><br><br>
+
+                <label for="phone">Telefone:</label>
+                <input type="text" id="phone" name="phone" placeholder="(99) 99999-9999" required><br><br>
+
+                <label for="prazo">Prazo de inscrição:</label>
+                <input type="text" id="prazo" name="prazo" placeholder="31/12/2024" required><br><br>
+
+                <label for="message">Informações adicionais:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Qualquer informação adicional que seja relevante"></textarea><br><br>
+
+                <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                <label for="privacyPolicy">Eu concordo com as <a href="privacy-and-cookies.html" style="color: #ffffff;" target="_blank">políticas de privacidade</a></label><br><br>
+
+                <button type="submit">Enviar</button>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+                <input type="hidden" name="_subject" value="Nova Solicitação de Vaga!">
+                <input type="hidden" name="_next" value="https://havagas.net">
+            </form>
+        </div>
+    </div>

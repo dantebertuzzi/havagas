@@ -1,0 +1,8 @@
+title: háVagas!
+description: "Hávagas! - Fazemos a ponte entre talentos com empresas e empresas com pessoas em busca de uma oportunidade de trabalho."
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
