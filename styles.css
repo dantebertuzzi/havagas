@@ -150,25 +150,6 @@ footer {
     background-image: linear-gradient(115deg, #4fcf70, #44ce7b, #12bcfe, #a767e5, #fad648);
 }
 
-@keyframes moveLeft {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-20px);
-        /* Ajuste a distância e direção conforme necessário */
-    }
-}
-
-.job {
-    animation: moveLeft 2s ease-in-out infinite alternate; /*moveLeft 2s ease-in-out infinite alternate;*/
-}
-
-.job:hover {
-    animation-play-state: paused;
-}
-
 @keyframes play {
     0% {
         background-position: 0px;
