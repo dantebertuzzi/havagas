@@ -1,0 +1,28 @@
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var cookieBanner = document.getElementById('cookie-banner');
+            var acceptCookiesButton = document.getElementById('accept-cookies');
+            var rejectCookiesButton = document.getElementById('reject-cookies');
+
+            if (!localStorage.getItem('cookiesAccepted')) {
+                cookieBanner.style.display = 'block';
+            }
+
+            function acceptCookies() {
+                cookieBanner.style.display = 'none';
+                localStorage.setItem('cookiesAccepted', 'true');
+            }
+
+            function rejectCookies() {
+                console.log('Cookies rejeitados');
+            }
+
+            if (acceptCookiesButton) {
+                acceptCookiesButton.addEventListener('click', acceptCookies);
+            }
+
+            if (rejectCookiesButton) {
+                rejectCookiesButton.addEventListener('click', rejectCookies);
+            }
+        });
+    </script>

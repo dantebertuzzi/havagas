@@ -2,11 +2,11 @@
 permalink: /entries.js
 ---
 // entries.js
-// Dados das vagas em _data/vagas.yml — este arquivo é gerado pelo Jekyll a partir de lá.
+// Dados das vagas em _vagas/*.md (collection) — este arquivo é gerado pelo Jekyll a partir dela.
 
 const entries = [
-{% for e in site.data.vagas %}    {
-        id: '{{ e.id }}',
+{% assign sorted_vagas = site.vagas | sort: "order" %}{% for e in sorted_vagas %}    {
+        id: '{{ e.job_id }}',
         title: '{{ e.title | replace: "'", "\'" }}',
         enterprise: '{{ e.enterprise | replace: "'", "\'" }}',
         location: '{{ e.location | replace: "'", "\'" }}',
@@ -109,34 +109,28 @@ function updateTimer(jobId, startDate, endDate) {
     }
 }
 
-const jobListingsContainer = document.querySelector('.job-listings');
-
-function generateJobListingsWithPhoneAndEmail(entries) {
+function initJobListings(entries) {
     entries.forEach(entry => {
-        const jobListing = document.createElement('div');
-        jobListing.classList.add('job');
-        jobListing.id = entry.id;
+        const jobListing = document.getElementById(entry.id);
+        if (!jobListing) return;
 
-        jobListing.innerHTML = `
-        <h3 style="margin-bottom: 0.5em;">${entry.title}</h3>
-        <h5 style="margin-bottom: 0.5em;">${entry.enterprise}</h5>
-        <p style="margin-bottom: 0.5em;">${entry.location}</p>
-        <p style="margin-bottom: 0.5em;">${entry.description}</p>
-            <a href="javascript:void(0)" class="button"><span>Candidatar-se</span></a>
-            ${entry.phone ? `<div class="phone" style="display: none;"><input type="text" id="phoneInput" value="${entry.phone}" readonly></div>` : ''}
-            ${entry.email ? `<div class="email" style="display: none;"><input type="text" id="emailInput" value="${entry.email}" readonly></div>` : ''}
-            <div class="tooltip" style="display: none;">Email copiado!</div>
-            <div class="timer" data-data-inicio="${entry.startDate}" data-data-fim="${entry.endDate}"></div>
-            <div class="expired-message" style="display: none;">Anúncio Expirado</div>
-        `;
+        if (entry.phone) {
+            jobListing.insertAdjacentHTML('beforeend', `<div class="phone" style="display: none;"><input type="text" id="phoneInput" value="${entry.phone}" readonly></div>`);
+        }
+        if (entry.email) {
+            jobListing.insertAdjacentHTML('beforeend', `<div class="email" style="display: none;"><input type="text" id="emailInput" value="${entry.email}" readonly></div>`);
+        }
 
-        jobListing.querySelector('.button').addEventListener('click', () => {
-            if (entry.phone) {
-                exibirWhatsApp(entry.id);
-            } else if (entry.email) {
-                exibirEmail(entry.id);
-            }
-        });
+        const button = jobListing.querySelector('.button');
+        if (button) {
+            button.addEventListener('click', () => {
+                if (entry.phone) {
+                    exibirWhatsApp(entry.id);
+                } else if (entry.email) {
+                    exibirEmail(entry.id);
+                }
+            });
+        }
 
         const phoneInput = jobListing.querySelector('#phoneInput');
         if (phoneInput) {
@@ -158,8 +152,6 @@ function generateJobListingsWithPhoneAndEmail(entries) {
         }
 
         jobListing.timerInterval = setInterval(() => updateTimer(entry.id, entry.startDate, entry.endDate), 1000);
-
-        jobListingsContainer.appendChild(jobListing);
     });
 }
 
@@ -180,5 +172,5 @@ function openWhatsApp(phoneNumber) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    generateJobListingsWithPhoneAndEmail(entries);
+    initJobListings(entries);
 });

@@ -1,6 +1,18 @@
 title: háVagas!
 description: "Hávagas! - Fazemos a ponte entre talentos com empresas e empresas com pessoas em busca de uma oportunidade de trabalho."
 
+collections:
+  vagas:
+    output: true
+    permalink: /vaga/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: vagas
+    values:
+      layout: vaga
+
 exclude:
   - Gemfile
   - Gemfile.lock
